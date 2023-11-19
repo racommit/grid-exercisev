@@ -117,6 +117,28 @@ if (sizeof($angka) >= 0) {
             color: black;
             text-align: center;
         }
+        th,td {
+                padding: 10px;
+                /* Set your desired padding value */
+                /* border: 1px solid #ddd; */
+                /* text-align: left; */
+            }
+
+        /* Tambahkan styling responsif menggunakan media query */
+        @media (max-width: 600px) {
+
+
+            th, td {
+                padding: 5px;
+                /* Set your desired padding value */
+                /* border: 1px solid #ddd; */
+                /* text-align: left; */
+            }
+
+
+
+            /* Tambahkan styling tambahan sesuai kebutuhan */
+        }
     </style>
 </head>
 
