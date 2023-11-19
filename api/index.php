@@ -159,7 +159,7 @@ if (sizeof($angka) >= 0) {
 
    <div class="judul">
 <h3>CONCENTRATION GRID EXERCISE</h3>
-        V1.6
+        V1.8
         <hr>
 </div>        
     <!-- form biodata -->
@@ -295,6 +295,7 @@ if (sizeof($angka) >= 0) {
             document.querySelector("h1").style.visibility = "visible";
             document.querySelector("#mundur").style.visibility = "visible";
             document.querySelector("#biodata").style.display = "none";
+            document.querySelector("#tombol").style.display = "none";
             nama = document.querySelector("#nama1").value;
             gender = document.querySelector("input[name='gender']:checked").value;
             kelas = document.querySelector("#kelas1").value;
