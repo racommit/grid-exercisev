@@ -38,7 +38,7 @@ if (sizeof($angka) >= 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HI, GRID</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://github.com/racommit/grid-exercisev/blob/main/api/img/icon.png" type="image/x-icon">
     <style>
         body {
             position: relative;
