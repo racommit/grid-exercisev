@@ -419,6 +419,7 @@ if (sizeof($angka) >= 0) {
                     document.querySelector("input[name='cepat']").readOnly = true;
                     document.querySelector("table").style.display = "none";
                     document.querySelector("#hasil").style.display = "block";
+                     document.querySelector(".penjelasan").style.display = "none";
 
                     if (benar < 5) {
                         document.querySelector(".catatan").innerHTML = "Konsentrasi kamu sangat kurang, Sepertinya kamu perlu sarapan dengan baik";
