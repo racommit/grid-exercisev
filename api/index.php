@@ -255,7 +255,7 @@ if (sizeof($angka) >= 0) {
             sarapan = document.querySelector("input[name='sarapan']:checked").value;
         }
 
-        mundur = 120; // 2 menit
+        mundur = 60; // 1 menit
         document.getElementById("mundur").innerHTML = "anda memiliki waktu " + mundur + " detik";
 
 
