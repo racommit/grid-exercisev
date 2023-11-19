@@ -75,8 +75,8 @@ if (sizeof($angka) >= 0) {
             color: white;
             border: none;
             box-shadow: 2px 1px 2px 2px grey;
-            display: inline;
-            margin-bottom: 50px;
+            display: block;
+            margin-bottom: 100px;
         }
 
         button:active,
@@ -159,7 +159,7 @@ if (sizeof($angka) >= 0) {
 
    <div class="judul">
 <h3>CONCENTRATION GRID EXERCISE</h3>
-        V1.8.3
+        V1.8.4
         <hr>
 </div>        
     <!-- form biodata -->
@@ -246,7 +246,8 @@ if (sizeof($angka) >= 0) {
 
         </div>
 
-        <button type="submit" id="id" onclick="location.reload()">KIRIM</button>
+        <span id="tombol" onclick="reset()">RESET</span>
+        <button type="submit" id="id">KIRIM</button>
     </form>
     <!-- form hasil -->
 
@@ -300,6 +301,7 @@ if (sizeof($angka) >= 0) {
             gender = document.querySelector("input[name='gender']:checked").value;
             kelas = document.querySelector("#kelas1").value;
             sarapan = document.querySelector("input[name='sarapan']:checked").value;
+            hitungMundur();
         }
 
         mundur = 60; // 1 menit
@@ -325,7 +327,7 @@ if (sizeof($angka) >= 0) {
             if (nilaiDiTangkap == 1 && waktuAwal == null) {
 
                 benar = 1;
-                hitungMundur();
+               
                 waktuAwal = new Date().getTime();
                 nilaiDiTangkapAkhir = nilaiDiTangkap;
                 elem.style.backgroundColor = "rgba(0,0,0,0.4)";
@@ -435,7 +437,8 @@ if (sizeof($angka) >= 0) {
                         document.querySelector(".catatan").innerHTML = "Maaf kami gagal mendeskripsikan";
                     }
 
-
+                    document.getElementById('id').style.visibility = "hidden";
+                    document.getElementById('id').click();
 
                 }
             }, 1000);
