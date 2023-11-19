@@ -159,7 +159,7 @@ if (sizeof($angka) >= 0) {
 
    <div class="judul">
 <h3>CONCENTRATION GRID EXERCISE</h3>
-        V1.8
+        V1.8.3
         <hr>
 </div>        
     <!-- form biodata -->
