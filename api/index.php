@@ -123,7 +123,19 @@ if (sizeof($angka) >= 0) {
                 /* border: 1px solid #ddd; */
                 /* text-align: left; */
             }
+         .penjelasan {
+            margin: 10px;
+            margin-bottom: 50px;
+            display:block;
+            text-align: justify;
+        }
 
+        .judul{
+            text-align: left;
+        }
+        .judul h3{
+            margin-bottom: 1px;
+        }  
         /* Tambahkan styling responsif menggunakan media query */
         @media (max-width: 600px) {
 
@@ -145,9 +157,14 @@ if (sizeof($angka) >= 0) {
 <body>
 
 
+   <div class="judul">
+<h3>CONCENTRATION GRID EXERCISE</h3>
+        V1.6
+        <hr>
+</div>        
     <!-- form biodata -->
-    <div class="daftar">
-        <h3>CONCENTRATION GRID EXERCISE</h3>
+    <div class="daftar" id="daftar">
+        
         <form id="biodata">
             <input type="text" id="nama1" placeholder="Nama Lengkap"><br>
 
@@ -166,8 +183,15 @@ if (sizeof($angka) >= 0) {
             <input type="radio" id="sudah" value="Sudah" name="sarapan">Sudah
             <input type="radio" id="belum" value="Belum" name="sarapan" style="margin-bottom:50px;">Belum <br>
 
-            <span id="tombol" onclick="mulai()">MULAI</button>
+            
         </form>
+
+        <div class="penjelasan">
+            Aturan main: <br>
+                Kamu diberi waktu selama 1 menit (60 detik), untuk klik angka dari 1-100 secara urut pada tabel, setiap angka yang benar dan salah akan dihitung beserta kecepatan klik yang kamu lakukan, data hasil akan ditampilkan kemudian lakukan klik tombol kirim.
+        </div>
+
+        <span id="tombol" onclick="mulai()">MULAI</span>
     </div>
     <!-- form biodata -->
 
