@@ -39,18 +39,98 @@ if (sizeof($angka) >= 0) {
     <title>HI, GRID</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+    <style>
+        body {
+            position: relative;
+            background-color: #EBE3D5;
+            text-align: center;
+        }
+
+        .daftar {
+            /* width:100%; */
+            border-bottom: 1px solid grey;
+            padding: 50px 20px;
+        }
+
+        input {
+            border: none;
+            padding: 2px 10px;
+        }
+
+        table {
+            margin: 50px auto;
+        }
+
+        td {
+            width: 20px;
+            text-align: center;
+        }
+
+        button,
+        #tombol {
+            padding: 10px 30px;
+            background-color: blue;
+            outline: none;
+            border-radius: 10px;
+            color: white;
+            border: none;
+            box-shadow: 2px 1px 2px 2px grey;
+            display: inline;
+            margin-bottom: 50px;
+        }
+
+        button:active,
+        #tombol:active {
+            box-shadow: none;
+        }
+
+        h1,
+        #mundur {
+            text-align: center;
+            display: block;
+            margin: 10px auto;
+        }
+
+        #kelas1 {
+            margin-top: 20px;
+            padding: 20px;
+            outline: nona;
+        }
+
+        form {
+            margin-top: 10px;
+        }
+
+        form input {
+            /* text-align: center; */
+            padding: 10px 10px;
+            margin: 10px;
+        }
+
+        form label {
+            text-align: left;
+        }
+
+        .catatan {
+            margin: 10px 50px 5px 50px;
+            /* padding:30px 30px 5px 30px; */
+            color: black;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
 
 
-<!-- form biodata -->
+    <!-- form biodata -->
     <div class="daftar">
         <h3>CONCENTRATION GRID EXERCISE</h3>
-        <form  id="biodata">
+        <form id="biodata">
             <input type="text" id="nama1" placeholder="Nama Lengkap"><br>
 
-            <input type="radio"id="gender1" value="Wanita"  name="gender">Wanita
-            <input type="radio"id="gender2" value="Pria" name="gender">Pria <br>
+            <input type="radio" id="gender1" value="Wanita" name="gender">Wanita
+            <input type="radio" id="gender2" value="Pria" name="gender">Pria <br>
 
             <select id="kelas1" style="margin-bottom:30px;">
                 <option value="1 Elektronika A">1 Elektronika A</option>
@@ -61,20 +141,20 @@ if (sizeof($angka) >= 0) {
             </select><br>
 
             <label for="sarapan">Apakah kamu sudah sarapan pagi ini?</label><br>
-            <input type="radio"id="sudah" value="Sudah"  name="sarapan">Sudah
-            <input type="radio"id="belum" value="Belum" name="sarapan" style="margin-bottom:50px;">Belum <br>
+            <input type="radio" id="sudah" value="Sudah" name="sarapan">Sudah
+            <input type="radio" id="belum" value="Belum" name="sarapan" style="margin-bottom:50px;">Belum <br>
 
             <span id="tombol" onclick="mulai()">MULAI</button>
         </form>
     </div>
-<!-- form biodata -->
+    <!-- form biodata -->
 
 
-<!-- tabel grid test -->
-    
+    <!-- tabel grid test -->
+
     <table border="1px" cellpadding="10" cellspacing="0">
-    <h1>waktu anda</h1>
-    <span id="mundur"></span>
+        <h1>waktu anda</h1>
+        <span id="mundur"></span>
         <?php for ($i = 1; $i <= 10; $i++) {
             echo '<tr>';
             for ($j = 1; $j <= 10; $j++) {
@@ -86,12 +166,12 @@ if (sizeof($angka) >= 0) {
         }
         ?>
     </table>
-<!-- table grid test -->
+    <!-- table grid test -->
 
 
 
-<!-- form hasil -->
-    <form name="submit-to-google-sheet" id="hasil">     
+    <!-- form hasil -->
+    <form name="submit-to-google-sheet" id="hasil">
         <label for="nama">Nama player:</label><br>
         <input name="nama" type="text" placeholder="nama" required><br>
 
@@ -116,16 +196,16 @@ if (sizeof($angka) >= 0) {
         <label for="nama">Perolehan klik tercepat:</label><br>
         <input name="cepat" type="text" placeholder="klik_tercepat" required><br>
 
-       <div class="catatan">
+        <div class="catatan">
 
-       </div>
+        </div>
 
         <button type="submit" id="id" onclick="location.reload()">KIRIM</button>
     </form>
-<!-- form hasil -->
+    <!-- form hasil -->
 
 
-   
+
 
     <?php
     echo "<script>
@@ -133,13 +213,13 @@ if (sizeof($angka) >= 0) {
         var benar = 0;
         var salah = 0;
         </script>"
-        ?>
+    ?>
 
     <script>
         document.querySelector("table").style.visibility = "hidden";
         document.querySelector("h1").style.visibility = "hidden";
         document.querySelector("#mundur").style.visibility = "hidden";
-        
+
 
         // variabel menampung waktu mundur
         var mundur;
@@ -150,9 +230,9 @@ if (sizeof($angka) >= 0) {
         var gender;
         var kelas;
         var sarapan;
-       
-       
-        mulai = () =>{
+
+
+        mulai = () => {
             var radioButtons = document.getElementsByName("gender");
             // Mengecek apakah setidaknya satu radio button terpilih
             var isAnyChecked = Array.from(radioButtons).some(radio => radio.checked);
@@ -160,8 +240,8 @@ if (sizeof($angka) >= 0) {
             var radioButtons2 = document.getElementsByName("sarapan");
             // Mengecek apakah setidaknya satu radio button terpilih
             var isAnyChecked2 = Array.from(radioButtons2).some(radio => radio.checked);
-            
-            if(document.querySelector("#nama1").value == "" || !isAnyChecked || document.querySelector("#kelas1").value == "" || !isAnyChecked2){
+
+            if (document.querySelector("#nama1").value == "" || !isAnyChecked || document.querySelector("#kelas1").value == "" || !isAnyChecked2) {
                 alert("isi biodata dengan benar");
                 return false;
             }
@@ -177,8 +257,8 @@ if (sizeof($angka) >= 0) {
 
         mundur = 120; // 2 menit
         document.getElementById("mundur").innerHTML = "anda memiliki waktu " + mundur + " detik";
-        
-       
+
+
         var nilaiDiTangkap = null;
         var nilaiDiTangkapAkhir = null;
         var waktuKlikSebelumnya = null;
@@ -205,7 +285,7 @@ if (sizeof($angka) >= 0) {
                 elem.style.color = "rgba(255,255,255,0.5)";
                 console.log(nilaiDiTangkap + 'benar');
                 if (waktuKlikSebelumnya !== null) {
-                   selisihWaktu = waktuSekarang - waktuKlikSebelumnya;
+                    selisihWaktu = waktuSekarang - waktuKlikSebelumnya;
                     console.log("Selisih waktu antara klik sebelumnya dan sekarang1: " + (selisihWaktu / 1000) + " detik");
 
                     selisihWaktuCepat = selisihWaktu;
@@ -220,8 +300,8 @@ if (sizeof($angka) >= 0) {
                     selisihWaktu = waktuSekarang - waktuKlikSebelumnya;
                     console.log("Selisih waktu antara klik sebelumnya dan sekarang2: " + (selisihWaktu / 1000) + " detik");
                     selisihBaru = selisihWaktu;
-                    
-                    if(selisihBaru < selisihWaktuCepat || selisihWaktuCepat == 0){
+
+                    if (selisihBaru < selisihWaktuCepat || selisihWaktuCepat == 0) {
                         selisihWaktuCepat = selisihWaktu / 1000;
                         console.log("waktu tercepat saat ini " + selisihWaktuCepat)
                     }
@@ -231,11 +311,12 @@ if (sizeof($angka) >= 0) {
             } else if ((nilaiDiTangkap - nilaiDiTangkapAkhir) > 1 && mundur > 0) {
                 salah++;
                 elem.style.backgroundColor = "red";
-                setTimeout(function () {
+                setTimeout(function() {
                     elem.style.backgroundColor = "";
                 }, 2000);
                 console.log(nilaiDiTangkap + 'salah');
-            } if (mundur == 0) {
+            }
+            if (mundur == 0) {
 
                 document.getElementsByTagName("tr").disabled = true;
             }
@@ -251,7 +332,7 @@ if (sizeof($angka) >= 0) {
             for (var i = 0; i < data.length; i++) {
                 data[i].style.backgroundColor = "";
                 data[i].style.color = "black";
-                data[i].onclick = function () {
+                data[i].onclick = function() {
                     tangkapnilai(this, parseInt(this.innerHTML));
                 };
             }
@@ -263,7 +344,7 @@ if (sizeof($angka) >= 0) {
         hitungMundur = () => {
             document.getElementById("mundur").innerHTML = "anda memiliki waktu " + mundur;
 
-            var hitungInterval = setInterval(function () {
+            var hitungInterval = setInterval(function() {
                 if (mundur > 0) {
                     mundur--;
                     document.getElementById("mundur").innerHTML = ("waktu anda tersisa " + mundur + " detik");
@@ -292,17 +373,17 @@ if (sizeof($angka) >= 0) {
                     document.querySelector("table").style.display = "none";
                     document.querySelector("#hasil").style.display = "block";
 
-                    if(benar < 5){
+                    if (benar < 5) {
                         document.querySelector(".catatan").innerHTML = "Konsentrasi kamu sangat kurang, Sepertinya kamu perlu sarapan dengan baik";
-                    }else if(benar < 10){
+                    } else if (benar < 10) {
                         document.querySelector(".catatan").innerHTML = "Konsentrasi kamu kurang, Sepertinya kamu perlu sarapan dengan baik";
-                    }else if(benar < 15){
+                    } else if (benar < 15) {
                         document.querySelector(".catatan").innerHTML = "Konsentrasi kamu cukup, Mari tingkatkan lagi";
-                    }else if(benar < 20){
+                    } else if (benar < 20) {
                         document.querySelector(".catatan").innerHTML = "Konsentrasi kamu Baik, Pertahankan!";
-                    }else if(benar > 20){
+                    } else if (benar > 20) {
                         document.querySelector(".catatan").innerHTML = "WOW! Konsentrasi kamu Sangat Baik, Pertahankan!";
-                    }else {
+                    } else {
                         document.querySelector(".catatan").innerHTML = "Maaf kami gagal mendeskripsikan";
                     }
 
@@ -317,13 +398,16 @@ if (sizeof($angka) >= 0) {
 
         form.addEventListener('submit', e => {
             e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
                 .then(response => console.log('Success!', response))
                 .catch(error => console.error('Error!', error.message))
         })
     </script>
-    
-    
+
+
 </body>
 
 </html>
