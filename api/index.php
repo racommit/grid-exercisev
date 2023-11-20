@@ -159,7 +159,7 @@ if (sizeof($angka) >= 0) {
 
    <div class="judul">
 <h3>CONCENTRATION GRID EXERCISE</h3>
-        V1.8.5
+        V1.8.6
         <hr>
 </div>        
     <!-- form biodata -->
@@ -377,14 +377,14 @@ if (sizeof($angka) >= 0) {
             waktuSekarang = null;
             waktuKlikSebelumnya = null;
             waktuAwal = null;
-            mundur = 120;
-            for (var i = 0; i < data.length; i++) {
-                data[i].style.backgroundColor = "";
-                data[i].style.color = "black";
-                data[i].onclick = function() {
-                    tangkapnilai(this, parseInt(this.innerHTML));
-                };
-            }
+            mundur = 60;
+            // for (var i = 0; i < data.length; i++) {
+            //     data[i].style.backgroundColor = "";
+            //     data[i].style.color = "black";
+            //     data[i].onclick = function() {
+            //         tangkapnilai(this, parseInt(this.innerHTML));
+            //     };
+            // }
             salah = 0;
             benar = 0;
             location.reload(true);
