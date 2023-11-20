@@ -159,7 +159,7 @@ if (sizeof($angka) >= 0) {
 
    <div class="judul">
 <h3>CONCENTRATION GRID EXERCISE</h3>
-        V1.8.4
+        V1.8.5
         <hr>
 </div>        
     <!-- form biodata -->
@@ -387,7 +387,8 @@ if (sizeof($angka) >= 0) {
             }
             salah = 0;
             benar = 0;
-            location.reload();
+            location.reload(true);
+            window.location.replace(window.location.href);
         }
 
         hitungMundur = () => {
