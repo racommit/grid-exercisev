@@ -180,8 +180,12 @@ if (sizeof($angka) >= 0) {
             </select><br>
 
             <label for="sarapan">Apakah kamu sudah sarapan pagi ini?</label><br>
-            <input type="radio" id="sudah" value="Sudah" name="sarapan">Sudah
-            <input type="radio" id="belum" value="Belum" name="sarapan" style="margin-bottom:50px;">Belum <br>
+            <input type="radio"id="sudah" value="Sudah"  name="sarapan">Sudah
+            <input type="radio"id="belum" value="Belum" name="sarapan" style="margin-bottom:30px;">Belum <br>
+
+            <label for="kos">Apakah kamu tinggal di Kost</label><br>
+            <input type="radio"id="ya" value="ya"  name="kos">ya
+            <input type="radio"id="tidak" value="tidak" name="kos" style="margin-bottom:50px;">tidak <br>
 
             
         </form>
@@ -226,6 +230,9 @@ if (sizeof($angka) >= 0) {
 
         <label for="kelas">Kelas:</label><br>
         <input name="kelas" type="text" placeholder="kelas" required><br>
+       
+        <label for="kos">Anak kos</label><br>
+        <input name="kos" type="text" placeholder="Anak kos" required><br>
 
         <label for="gender">Kondisi sarapan:</label><br>
         <input name="sarapan" type="text" placeholder="sarapan" required id="sarapan"><br>
@@ -277,6 +284,7 @@ if (sizeof($angka) >= 0) {
         var gender;
         var kelas;
         var sarapan;
+        var kos;
 
 
         mulai = () => {
@@ -287,6 +295,10 @@ if (sizeof($angka) >= 0) {
             var radioButtons2 = document.getElementsByName("sarapan");
             // Mengecek apakah setidaknya satu radio button terpilih
             var isAnyChecked2 = Array.from(radioButtons2).some(radio => radio.checked);
+
+            var radioButtons3 = document.getElementsByName("kos");
+            // Mengecek apakah setidaknya satu radio button terpilih
+            var isAnyChecked3 = Array.from(radioButtons2).some(radio => radio.checked);
 
             if (document.querySelector("#nama1").value == "" || !isAnyChecked || document.querySelector("#kelas1").value == "" || !isAnyChecked2) {
                 alert("isi biodata dengan benar");
@@ -301,6 +313,8 @@ if (sizeof($angka) >= 0) {
             gender = document.querySelector("input[name='gender']:checked").value;
             kelas = document.querySelector("#kelas1").value;
             sarapan = document.querySelector("input[name='sarapan']:checked").value;
+            kos = document.querySelector("input[name='kos']:checked").value;
+            
             hitungMundur();
         }
 
@@ -407,6 +421,7 @@ if (sizeof($angka) >= 0) {
                     document.querySelector("input[name='nama']").value = nama;
                     document.querySelector("input[id='gender']").value = gender;
                     document.querySelector("input[name='kelas']").value = kelas;
+                    document.querySelector("input[name='kos']").value = kos;
                     document.querySelector("input[id='sarapan']").value = sarapan;
                     document.querySelector("input[name='jumlah_benar']").value = benar;
                     document.querySelector("input[name='jumlah_salah']").value = salah;
@@ -415,6 +430,7 @@ if (sizeof($angka) >= 0) {
                     document.querySelector("input[name='nama']").readOnly = true;
                     document.querySelector("input[id='gender']").readOnly = true;
                     document.querySelector("input[name='kelas']").readOnly = true;
+                    document.querySelector("input[name='kos']").readOnly = true;
                     document.querySelector("input[id='sarapan']").readOnly = true;
                     document.querySelector("input[name='jumlah_benar']").readOnly = true;
                     document.querySelector("input[name='jumlah_salah']").readOnly = true;
