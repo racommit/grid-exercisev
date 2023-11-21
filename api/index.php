@@ -298,7 +298,7 @@ if (sizeof($angka) >= 0) {
 
             var radioButtons3 = document.getElementsByName("kos");
             // Mengecek apakah setidaknya satu radio button terpilih
-            var isAnyChecked3 = Array.from(radioButtons2).some(radio => radio.checked);
+            var isAnyChecked3 = Array.from(radioButtons3).some(radio => radio.checked);
 
             if (document.querySelector("#nama1").value == "" || !isAnyChecked || document.querySelector("#kelas1").value == "" || !isAnyChecked2) {
                 alert("isi biodata dengan benar");
