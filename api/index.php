@@ -232,7 +232,7 @@ if (sizeof($angka) >= 0) {
         <input name="kelas" type="text" placeholder="kelas" required><br>
        
         <label for="kos">Anak kos</label><br>
-        <input name="kos" type="text" placeholder="Anak kos" required><br>
+        <input name="kos" type="text" placeholder="Anak kos" required id="hasilkos"><br>
 
         <label for="gender">Kondisi sarapan:</label><br>
         <input name="sarapan" type="text" placeholder="sarapan" required id="sarapan"><br>
@@ -421,7 +421,7 @@ if (sizeof($angka) >= 0) {
                     document.querySelector("input[name='nama']").value = nama;
                     document.querySelector("input[id='gender']").value = gender;
                     document.querySelector("input[name='kelas']").value = kelas;
-                    document.querySelector("input[name='kos']").value = kos;
+                    document.querySelector("input[id='hasilkos']").value = kos;
                     document.querySelector("input[id='sarapan']").value = sarapan;
                     document.querySelector("input[name='jumlah_benar']").value = benar;
                     document.querySelector("input[name='jumlah_salah']").value = salah;
