@@ -159,7 +159,7 @@ if (sizeof($angka) >= 0) {
 
    <div class="judul">
 <h3>CONCENTRATION GRID EXERCISE</h3>
-        V1.8.8
+        V1.8.9
         <hr>
 </div>        
     <!-- form biodata -->
@@ -266,6 +266,7 @@ if (sizeof($angka) >= 0) {
         
         var benar = 0;
         var salah = 0;
+        var mundur = 60;
         </script>"
     ?>
 
@@ -318,7 +319,7 @@ if (sizeof($angka) >= 0) {
             hitungMundur();
         }
 
-        mundur = 60; // 1 menit
+       
         document.getElementById("mundur").innerHTML = "anda memiliki waktu " + mundur + " detik";
 
 
@@ -391,7 +392,7 @@ if (sizeof($angka) >= 0) {
             waktuSekarang = null;
             waktuKlikSebelumnya = null;
             waktuAwal = null;
-            mundur = 60;
+            
             // for (var i = 0; i < data.length; i++) {
             //     data[i].style.backgroundColor = "";
             //     data[i].style.color = "black";
