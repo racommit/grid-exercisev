@@ -430,7 +430,7 @@ if (sizeof($angka) >= 0) {
                     document.querySelector("input[name='nama']").readOnly = true;
                     document.querySelector("input[id='gender']").readOnly = true;
                     document.querySelector("input[name='kelas']").readOnly = true;
-                    document.querySelector("input[name='kos']").readOnly = true;
+                    document.querySelector("input[id='hasilkos']").readOnly = true;
                     document.querySelector("input[id='sarapan']").readOnly = true;
                     document.querySelector("input[name='jumlah_benar']").readOnly = true;
                     document.querySelector("input[name='jumlah_salah']").readOnly = true;
