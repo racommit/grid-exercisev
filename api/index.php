@@ -159,7 +159,7 @@ if (sizeof($angka) >= 0) {
 
    <div class="judul">
 <h3>CONCENTRATION GRID EXERCISE</h3>
-        V1.8.9
+        V1.9.0
         <hr>
 </div>        
     <!-- form biodata -->
@@ -271,6 +271,14 @@ if (sizeof($angka) >= 0) {
     ?>
 
     <script>
+         var tutup = new Date();
+        tutup = tutup.getHours();
+
+        if(tutup > 11){
+            alert("Waktu udah lewat dari jam 11 siang, inimah bukan sarapan");
+            window.location.href = "https://www.youtube.com/shorts/t9FpzLCo444";
+            // return false;
+        }else{
         document.querySelector("table").style.visibility = "hidden";
         document.querySelector("h1").style.visibility = "hidden";
         document.querySelector("#mundur").style.visibility = "hidden";
@@ -473,7 +481,7 @@ if (sizeof($angka) >= 0) {
                 })
                 .then(response => console.log('Success!', response))
                 .catch(error => console.error('Error!', error.message))
-        })
+        })}
     </script>
 
 
