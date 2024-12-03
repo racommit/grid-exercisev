@@ -3,5 +3,12 @@
     "api/*.php": {
       "runtime": "vercel-php@0.6.0"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/api/index.php",
+      "permanent": false
+    }
+  ]
 }
